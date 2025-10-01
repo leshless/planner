@@ -5,7 +5,7 @@ on:
     branches:
       - "main"
     paths:
-      - "go/**"
+      - "backend/**"
 
 jobs:
   linters:
@@ -32,5 +32,5 @@ jobs:
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v8
         with:
-          version: "v1.60"
+          version: "v2.1"
           working-directory: "go"
