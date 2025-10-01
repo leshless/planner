@@ -1,4 +1,4 @@
-version: 2
+version: "2"
 
 linters:
   default: none
@@ -15,7 +15,6 @@ linters:
       package-average: 4
 
 formatters:
-  default: none
   enable:
     - gofmt 
     - goimports
