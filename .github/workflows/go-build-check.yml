@@ -23,7 +23,6 @@ jobs:
 
       - name: Download go dependencies
         run: |
-          cd go
           go mod download
 
       - name: Add Go bin to PATH
