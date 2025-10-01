@@ -26,5 +26,5 @@ formatters:
         - pattern: 'interface{}'
           replacement: 'any'
 
-      goimports:
-        local-prefixes: []
+    goimports:
+      local-prefixes: []
