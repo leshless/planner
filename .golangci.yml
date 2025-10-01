@@ -28,5 +28,4 @@ formatters:
           replacement: 'any'
 
     goimports:
-      local-prefixes:
-        - github.com/org/project
+      local-prefixes: []
