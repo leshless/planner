@@ -1,0 +1,32 @@
+version: 2
+
+linters:
+  default: none
+  enable:
+    - govet
+    - cyclop
+  
+  settings:
+    govet:
+      enable-all: true
+
+    cyclop:
+      max-complexity: 8
+      package-average: 4
+
+formatters:
+  default: none
+  enable:
+    - gofmt 
+    - goimports
+
+  settings:
+    - gofmt:
+        simplify: false
+        rewrite-rules:
+          - pattern: 'interface{}'
+            replacement: 'any'
+
+    - goimports:
+        local-prefixes:
+         - github.com/org/project

@@ -1,0 +1,36 @@
+name: Go build check
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "backend/**"
+
+jobs:
+  build:
+    name: Go build check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.1"
+
+      - name: Download go dependencies
+        run: |
+          cd go
+          go mod download
+
+      - name: Add Go bin to PATH
+        run: |
+          echo "${{ runner.tool_cache }}/go/$(go version | awk '{ print $3 }')/*/bin" >> $GITHUB_PATH
+
+      - name: Build backend app
+        run: |
+          cd backend/cmd/backend
+          go build
