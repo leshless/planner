@@ -21,12 +21,12 @@ formatters:
     - goimports
 
   settings:
-    - gofmt:
-        simplify: false
-        rewrite-rules:
-          - pattern: 'interface{}'
-            replacement: 'any'
+    gofmt:
+      simplify: false
+      rewrite-rules:
+        - pattern: 'interface{}'
+          replacement: 'any'
 
-    - goimports:
-        local-prefixes:
-         - github.com/org/project
+    goimports:
+      local-prefixes:
+        - github.com/org/project
