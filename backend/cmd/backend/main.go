@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
+import "planner/backend/internal/app"
 
 func main() {
-	fmt.Println("Alles gut!")
-	fmt.Println("Aber ich bin zu mude!")
+	app, err := app.Init(app.NewDefaultPrimitives())
+	if err != nil {
+		panic(err)
+	}
+
+	if err := app.Run(); err != nil {
+		panic(err)
+	}
 }

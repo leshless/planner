@@ -1,0 +1,4 @@
+logger:
+  output_to_stdout: true
+  output_file_path: "backend.out"
+  development: true
